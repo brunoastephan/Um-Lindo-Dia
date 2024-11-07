@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlkdjcgddlwj5"]
+
+[ext_resource type="Texture2D" uid="uid://68sjl3p0ppc6" path="res://assets/PNG/nuvenzinha_particula_textura.png" id="1_6dmu6"]
+
+[sub_resource type="Curve" id="Curve_6njvq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.183562, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tu3ky"]
+curve = SubResource("Curve_6njvq")
+
+[sub_resource type="Curve" id="Curve_7r1qd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.506849, 0.872727), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ke8nw"]
+curve = SubResource("Curve_7r1qd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0x6wo"]
+emission_shape = 3
+emission_box_extents = Vector3(75, 20, 1)
+particle_flag_disable_z = true
+gravity = Vector3(-100, 0, 0)
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.2
+orbit_velocity_curve = SubResource("CurveTexture_tu3ky")
+damping_max = 70.31
+scale_min = 0.4
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_ke8nw")
+turbulence_noise_strength = 2.0
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_0x6wo")
+texture = ExtResource("1_6dmu6")
+lifetime = 2.0
+preprocess = 2.0
