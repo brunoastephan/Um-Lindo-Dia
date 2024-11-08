@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://l8beycev6066"]
+
+[ext_resource type="PackedScene" uid="uid://2ueexlacv6i4" path="res://nuvenzinha_montada.tscn" id="1_4nrpu"]
+
+[node name="World" type="Node2D"]
+
+[node name="Nuvem" parent="." instance=ExtResource("1_4nrpu")]
