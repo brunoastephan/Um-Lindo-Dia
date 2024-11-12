@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://clmavcx5cj64r"]
+
+[ext_resource type="Texture2D" uid="uid://cr5yypw7iev03" path="res://Summer3.png" id="1_glvsv"]
+[ext_resource type="PackedScene" uid="uid://2ueexlacv6i4" path="res://nuvenzinha_montada.tscn" id="2_dhmlv"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_glvsv")
+
+[node name="Nuvem" parent="." instance=ExtResource("2_dhmlv")]
+position = Vector2(676, 491)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Weather" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.721
+anchor_right = 0.721
+offset_left = 104.408
+offset_top = 4.0
+offset_right = 234.408
+offset_bottom = 149.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Weather"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 145.0

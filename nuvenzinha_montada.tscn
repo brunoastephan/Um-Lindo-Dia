@@ -2,11 +2,71 @@
 
 [ext_resource type="PackedScene" uid="uid://dlkdjcgddlwj5" path="res://nuvenzinha_part.tscn" id="1_ihniy"]
 [ext_resource type="Texture2D" uid="uid://c4ypmc6iy3kyx" path="res://assets/PNG/nuvenzinha_sorriso.png" id="2_ht8pw"]
-[ext_resource type="Script" path="res://Nuvem.gd" id="3_3myfq"]
+
+[sub_resource type="GDScript" id="GDScript_5kufa"]
+script/source = "extends CharacterBody2D
+
+@export var MAX_SPEED = 200
+@export var ACCELERATION = 1500
+@export var FRICTION = 1200
+@onready var gpu_particles_2d = $GPUParticles2D
+
+@onready var axis = Vector2.ZERO
+const WINDY = preload(\"res://assets/PNG/nuvenzinha_particula_textura.png\")
+const RAINY = preload(\"res://assets/PNG/Rainy.png\")
+const SUNNY = preload(\"res://assets/PNG/Sunny.png\")
+
+func _ready():
+	gpu_particles_2d.set_texture(WINDY)
+	
+func _physics_process(delta):
+	move(delta)
+	generate_fluffy()
+	change_skill()
+	
+func get_input_axis():
+	axis.x = int(Input.is_action_pressed(\"Right\", true)) - int(Input.is_action_pressed(\"Left\", true))
+	axis.y = int(Input.is_action_pressed(\"Down\", true)) - int(Input.is_action_pressed(\"Up\", true))
+	
+	return axis.normalized()
+
+func move(delta):
+	axis = get_input_axis()
+	if axis == Vector2.ZERO:
+		apply_friction(FRICTION * delta)
+	else:
+		apply_movement(axis * ACCELERATION * delta)
+	move_and_slide()
+
+func apply_friction(amount):
+	if velocity.length() > amount:
+		velocity -= velocity.normalized() * amount
+	else:
+		velocity = Vector2.ZERO
+
+func apply_movement(accel):
+	velocity += accel
+	velocity = velocity.limit_length(MAX_SPEED)
+
+func generate_fluffy():
+	if velocity.x != 0 or velocity.y != 0:
+		gpu_particles_2d.set_amount(300)
+		gpu_particles_2d.set_lifetime(1)
+
+func change_skill():
+	if Input.is_action_just_pressed(\"Change Skill I\", true) :
+		gpu_particles_2d.set_texture(RAINY)
+		
+	if Input.is_action_just_pressed(\"Change Skill II\", true) :
+		gpu_particles_2d.set_texture(SUNNY)
+		
+	if Input.is_action_just_pressed(\"Change Skill III\", true):
+		gpu_particles_2d.set_texture(WINDY)
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30dc6"]
-radius = 75.0
-height = 150.0
+radius = 109.0
+height = 218.0
 
 [sub_resource type="Animation" id="Animation_tetid"]
 resource_name = "nuvenzinha_rosto"
@@ -45,23 +105,31 @@ _data = {
 [node name="Nuvem" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("3_3myfq")
+script = SubResource("GDScript_5kufa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_30dc6")
 
+[node name="Stormy" type="AnimatedSprite2D" parent="CharacterBody2D"]
+
+[node name="Sunny" type="AnimatedSprite2D" parent="CharacterBody2D"]
+
 [node name="GPUParticles2D" parent="CharacterBody2D" instance=ExtResource("1_ihniy")]
 amount = 200
+texture = null
 lifetime = 1.5
 
 [node name="Rosto" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(1.49012e-08, 1)
 rotation = 0.174533
 scale = Vector2(0.31579, 0.31579)
 texture = ExtResource("2_ht8pw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/Rosto"]
-autoplay = "nuvenzinha_rosto"
 libraries = {
 "": SubResource("AnimationLibrary_5ucqi")
 }
+autoplay = "nuvenzinha_rosto"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
