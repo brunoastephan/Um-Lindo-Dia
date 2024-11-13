@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://clmavcx5cj64r"]
+[gd_scene load_steps=6 format=3 uid="uid://clmavcx5cj64r"]
 
 [ext_resource type="Texture2D" uid="uid://cr5yypw7iev03" path="res://Summer3.png" id="1_glvsv"]
 [ext_resource type="PackedScene" uid="uid://2ueexlacv6i4" path="res://nuvenzinha_montada.tscn" id="2_dhmlv"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="3_h7dpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkr1p"]
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.245557, 0.137803, 0.0956448, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f1nh6"]
 
 [node name="Level" type="Node2D"]
 
@@ -19,6 +29,7 @@ position = Vector2(676, 491)
 format = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_h7dpo")
 
 [node name="Weather" type="Panel" parent="CanvasLayer"]
 anchors_preset = -1
@@ -26,11 +37,15 @@ anchor_left = 0.721
 anchor_right = 0.721
 offset_left = 104.408
 offset_top = 4.0
-offset_right = 234.408
+offset_right = 237.408
 offset_bottom = 149.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dkr1p")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Weather"]
 layout_mode = 0
-offset_right = 130.0
-offset_bottom = 145.0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 118.0
+offset_bottom = 133.0
+texture = SubResource("CompressedTexture2D_f1nh6")
