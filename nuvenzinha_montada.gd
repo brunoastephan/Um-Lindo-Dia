@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var gpu_particles_2d = $CharacterBody2D/GPUParticles2D
 const WINDY = preload("res://assets/PNG/nuvenzinha_particula_textura.png")
-const RAINY = preload("res://assets/PNG/Rainy.png")
 const SUNNY = preload("res://assets/PNG/Sunny.png")
+const RAINY = preload("res://assets/PNG/nuvenzinha_particula_chuva_textura.png")
 
 func _ready():
 	gpu_particles_2d.set_texture(WINDY)

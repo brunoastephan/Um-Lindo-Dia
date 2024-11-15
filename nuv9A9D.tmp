@@ -106,6 +106,9 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = SubResource("GDScript_5kufa")
+MAX_SPEED = null
+ACCELERATION = null
+FRICTION = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_30dc6")
