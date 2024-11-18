@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://gekqkh631n2t"]
+
+[ext_resource type="Texture2D" uid="uid://biua7nw7vkvuw" path="res://assets/PNG/coqueiro.png" id="1_sc2vn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cks01"]
+atlas = ExtResource("1_sc2vn")
+region = Rect2(0, 0, 131, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c407c"]
+atlas = ExtResource("1_sc2vn")
+region = Rect2(131, 0, 131, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57ej2"]
+atlas = ExtResource("1_sc2vn")
+region = Rect2(262, 0, 131, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oujt4"]
+atlas = ExtResource("1_sc2vn")
+region = Rect2(393, 0, 131, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c42dn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cks01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c407c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57ej2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oujt4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6jxw"]
+size = Vector2(155, 532)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(145, -264)
+scale = Vector2(2.40458, 2.76042)
+sprite_frames = SubResource("SpriteFrames_c42dn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.726873
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(138, -267)
+shape = SubResource("RectangleShape2D_n6jxw")
