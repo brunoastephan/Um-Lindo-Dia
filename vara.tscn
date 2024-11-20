@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnl87x7qgy53k"]
+
+[ext_resource type="Texture2D" uid="uid://cin2qc5seit3x" path="res://assets/PNG/Asset 5@2x.png" id="1_701om"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mth7"]
+size = Vector2(229, 917)
+
+[node name="Vara" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -376.5)
+shape = SubResource("RectangleShape2D_5mth7")
+
+[node name="vara" type="Sprite2D" parent="."]
+position = Vector2(-2, -2)
+scale = Vector2(0.286863, 0.318182)
+texture = ExtResource("1_701om")

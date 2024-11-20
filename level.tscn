@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://gekqkh631n2t" path="res://coqueiro.tscn" id="6_pk0kd"]
 [ext_resource type="PackedScene" uid="uid://cx57qmvwn780j" path="res://broto.tscn" id="7_xu6e4"]
 [ext_resource type="Texture2D" uid="uid://dhdq6ab8u82wn" path="res://assets/PNG/Asset 4@2x.png" id="9_deeyv"]
-[ext_resource type="Texture2D" uid="uid://cin2qc5seit3x" path="res://assets/PNG/Asset 5@2x.png" id="10_fq11k"]
-[ext_resource type="Texture2D" uid="uid://csibegljwlqlf" path="res://assets/PNG/Asset 3@2x.png" id="11_txkyl"]
+[ext_resource type="PackedScene" uid="uid://bp3wc00q16ea4" path="res://Placa.tscn" id="12_1iks4"]
+[ext_resource type="PackedScene" uid="uid://dnl87x7qgy53k" path="res://vara.tscn" id="12_huj7q"]
 [ext_resource type="PackedScene" uid="uid://facay3ypkn0" path="res://npc.tscn" id="12_k0hbn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s2yj"]
@@ -1357,6 +1357,7 @@ offset_bottom = 133.0
 texture = SubResource("CompressedTexture2D_f1nh6")
 
 [node name="Coqueiro" parent="." instance=ExtResource("6_pk0kd")]
+visible = false
 position = Vector2(1395, 1063)
 
 [node name="Broto" parent="." instance=ExtResource("7_xu6e4")]
@@ -1364,19 +1365,17 @@ position = Vector2(1466, 981)
 
 [node name="Barco" type="Sprite2D" parent="."]
 top_level = true
+z_index = 2
 position = Vector2(530, 1054)
 scale = Vector2(0.451351, 0.45057)
 texture = ExtResource("9_deeyv")
 
-[node name="Vara" type="Sprite2D" parent="."]
-position = Vector2(373, 994)
-scale = Vector2(0.290885, 0.333058)
-texture = ExtResource("10_fq11k")
-
-[node name="Placa" type="Sprite2D" parent="."]
-position = Vector2(1068, 928)
-scale = Vector2(0.395437, 0.431164)
-texture = ExtResource("11_txkyl")
-
 [node name="npc" parent="." instance=ExtResource("12_k0hbn")]
+z_index = 1
 position = Vector2(528, 970)
+
+[node name="Vara" parent="." instance=ExtResource("12_huj7q")]
+position = Vector2(376, 997)
+
+[node name="Placa" parent="." instance=ExtResource("12_1iks4")]
+position = Vector2(1007, 955)

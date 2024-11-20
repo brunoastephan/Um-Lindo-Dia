@@ -67,4 +67,9 @@ func move(delta, direction):
 	velocity.y = 0
 	move_and_slide()
 	$AnimatedSprite2D.play("walk")
+
+func change_state(state):
+	current_state = state
 	
+func get_state():
+	return current_state
