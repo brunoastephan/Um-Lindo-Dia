@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dq6e30ovcwwl3" path="res://assets/PNG/broto.png" id="1_he6qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbk7l"]
-size = Vector2(163, 222)
+size = Vector2(163, 526)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_465vt"]
 atlas = ExtResource("1_he6qt")
@@ -37,12 +37,12 @@ animations = [{
 [node name="Area2D" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(87.5, -36)
+position = Vector2(87.5, -188)
 shape = SubResource("RectangleShape2D_pbk7l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(84, -33.125)
-scale = Vector2(0.592105, 0.586412)
+position = Vector2(84, -35.5)
+scale = Vector2(0.592105, 0.598945)
 sprite_frames = SubResource("SpriteFrames_8g1nr")
 animation = &"idle"
 autoplay = "idle"
