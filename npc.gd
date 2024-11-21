@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const COCONUT = preload("res://coconut.tscn")
+
 enum STATE {
 	IDLE,
 	START_ON_BOAT,
@@ -7,6 +9,7 @@ enum STATE {
 	FALL_ON_LAND,
 	MOVE_TO_TREE,
 	STAY_IN_TREE,
+	DYING,
 }
 
 const launch_speed = 500
@@ -56,6 +59,8 @@ func _physics_process(delta):
 		STATE.STAY_IN_TREE:
 			$AnimatedSprite2D.play("idle")
 		
+		STATE.DYING:
+			$AnimatedSprite2D.play("dying")
 			
 func move(delta, direction):
 	if(direction.x > 0):
@@ -73,3 +78,6 @@ func change_state(state):
 	
 func get_state():
 	return current_state
+	
+
+

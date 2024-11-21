@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6jxw"]
-size = Vector2(155, 532)
+size = Vector2(130, 532)
 
 [node name="Area2D" type="Area2D"]
 
@@ -49,8 +49,7 @@ scale = Vector2(2.40458, 2.76042)
 sprite_frames = SubResource("SpriteFrames_c42dn")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.726873
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(138, -267)
+position = Vector2(144, -267)
 shape = SubResource("RectangleShape2D_n6jxw")
