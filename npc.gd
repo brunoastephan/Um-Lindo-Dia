@@ -61,7 +61,9 @@ func _physics_process(delta):
 		
 		STATE.DYING:
 			$AnimatedSprite2D.play("dying")
-			
+			if $AnimatedSprite2D.get_frame() == 4:
+				$AnimatedSprite2D.pause()
+				
 func move(delta, direction):
 	if(direction.x > 0):
 		$AnimatedSprite2D.flip_h = false

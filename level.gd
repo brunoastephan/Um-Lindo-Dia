@@ -64,7 +64,9 @@ func coconut_bomb():
 			var wild_coconut_appear = coconut_scene.instantiate()
 			get_tree().root.add_child(wild_coconut_appear)
 			wild_coconut_appear.start_coconut(Vector2(1454.02, 670.1772))
-			kill = true
+			if npc.get_state() == 5:
+				await get_tree().create_timer(0.8).timeout
+				kill = true
 			
 func npc_died():
 	if kill == true:

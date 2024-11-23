@@ -55,7 +55,6 @@ position_smoothing_speed = 7.0
 
 [node name="ChuvaCaindo" type="CPUParticles2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 amount = 20
 lifetime = 1.5
 texture = ExtResource("2_jm1hc")
@@ -68,7 +67,6 @@ color = Color(0.490196, 1, 1, 1)
 
 [node name="VentoSoprando" type="CPUParticles2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 amount = 5
 lifetime = 1.5
 speed_scale = 2.0
@@ -83,7 +81,6 @@ gravity = Vector2(0, 400)
 
 [node name="SolRaiando" type="CPUParticles2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 amount = 5
 lifetime = 1.5
 speed_scale = 4.38
@@ -102,8 +99,6 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_30dc6")
 
-[node name="Status" type="AnimatedSprite2D" parent="."]
-
 [node name="GPUParticles2D" parent="." instance=ExtResource("1_ihniy")]
 amount = 200
 texture = null
@@ -115,7 +110,7 @@ scale = Vector2(0.31579, 0.31579)
 texture = ExtResource("2_ht8pw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Rosto"]
-autoplay = "nuvenzinha_rosto"
 libraries = {
 "": SubResource("AnimationLibrary_5ucqi")
 }
+autoplay = "nuvenzinha_rosto"
