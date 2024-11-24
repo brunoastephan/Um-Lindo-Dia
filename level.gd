@@ -38,6 +38,7 @@ func _process(delta):
 func boat_npc_interact():
 	if vara.overlaps_body(nuvem):
 		if Input.is_action_just_pressed("Skill", true) and texture_rect.get_texture() == FIRE_SYMBOL:
+			vara.set_temperature()
 			npc.change_state(npc.STATE.FALL_ON_LAND)
 			
 func npc_go_to_tree():
