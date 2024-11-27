@@ -8,9 +8,9 @@ extends Node2D
 @onready var placa = $Placa
 @onready var texture_rect = $CanvasLayer/Weather/TextureRect
 
-const FIRE_SYMBOL = preload("res://assets/PNG/fire-symbol.jpg")
-const WATER_SYMBOL = preload("res://assets/PNG/water_drop.jpg")
-const WIND_SYMBOL = preload("res://assets/PNG/wind-symbol.jpg")
+const FIRE_SYMBOL = preload("res://assets/PNG/icon_sol.png")
+const WATER_SYMBOL = preload("res://assets/PNG/icon_chuva.png")
+const WIND_SYMBOL = preload("res://assets/PNG/icon_vento.png")
 var coconut_scene = preload("res://coconut.tscn")
 
 var water_growth

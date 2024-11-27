@@ -1,8 +1,8 @@
 extends CanvasLayer
 @onready var texture_rect = $Weather/TextureRect
-const FIRE_SYMBOL = preload("res://assets/PNG/fire-symbol.jpg")
-const WATER_SYMBOL = preload("res://assets/PNG/water_drop.jpg")
-const WIND_SYMBOL = preload("res://assets/PNG/wind-symbol.jpg")
+const FIRE_SYMBOL = preload("res://assets/PNG/icon_sol.png")
+const WATER_SYMBOL = preload("res://assets/PNG/icon_chuva.png")
+const WIND_SYMBOL = preload("res://assets/PNG/icon_vento.png")
 var state
 
 func _ready():
@@ -20,4 +20,3 @@ func change_weather():
 		
 	if Input.is_action_just_pressed("Change Skill III", true):
 		texture_rect.set_texture(WIND_SYMBOL)
-
