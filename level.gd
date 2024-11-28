@@ -64,7 +64,7 @@ func coconut_bomb():
 		if Input.is_action_just_pressed("Skill", true) and texture_rect.get_texture() == WIND_SYMBOL:
 			var wild_coconut_appear = coconut_scene.instantiate()
 			get_tree().root.add_child(wild_coconut_appear)
-			wild_coconut_appear.start_coconut(Vector2(1454.02, 670.1772))
+			wild_coconut_appear.start_coconut(Vector2(1690.00, 670.1772))
 			if npc.get_state() == 5:
 				await get_tree().create_timer(0.8).timeout
 				kill = true
