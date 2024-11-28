@@ -18,7 +18,7 @@ const speed = 100
 const gravity = 400
 const boat_position = Vector2(534, 985)
 const land_position = Vector2(974, 985)
-const tree_position = Vector2(1450, 985)
+const tree_position = Vector2(1720, 985)
 var current_state = STATE.START_ON_BOAT
 var start_position = Vector2()
 var direction
