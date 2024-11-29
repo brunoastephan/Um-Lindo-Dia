@@ -72,3 +72,9 @@ func coconut_bomb():
 func npc_died():
 	if kill == true:
 		npc.change_state(npc.STATE.DYING)
+		$congrats.show()
+
+
+
+func _on_window_close_requested():
+	$Window.hide()

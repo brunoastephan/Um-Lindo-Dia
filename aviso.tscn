@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0epa0q0tcm6r"]
+
+[ext_resource type="Script" path="res://Aviso.gd" id="1_mxf6s"]
+[ext_resource type="Texture2D" uid="uid://8cwfmyqcv0m3" path="res://assets/PNG/Asset 46@2x.png" id="2_3ardj"]
+
+[node name="Aviso" type="Node2D"]
+script = ExtResource("1_mxf6s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 254.0
+offset_right = 929.0
+offset_bottom = 645.0
+texture = ExtResource("2_3ardj")
+expand_mode = 1

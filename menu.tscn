@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7yvxji2hc6m0"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_2hi34"]
+[ext_resource type="Texture2D" uid="uid://c2kuo5e36int2" path="res://assets/PNG/Asset 41@2x.png" id="2_tfndp"]
+[ext_resource type="Texture2D" uid="uid://j34na27nd2up" path="res://assets/PNG/Asset 42@2x.png" id="3_d4l7m"]
+[ext_resource type="Texture2D" uid="uid://vb4kr781s7cs" path="res://assets/PNG/Asset 43@2x.png" id="4_dnkw3"]
+[ext_resource type="Texture2D" uid="uid://dy68dycijka83" path="res://assets/PNG/Asset 44@2x.png" id="4_pvirk"]
+[ext_resource type="Texture2D" uid="uid://cj7e7ixifbmoc" path="res://assets/PSB/Plan-2.png" id="6_frg7k"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_2hi34")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 649.0
+texture = ExtResource("2_tfndp")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="um_lindo_dia" type="Sprite2D" parent="."]
+position = Vector2(586, 180)
+scale = Vector2(0.468326, 0.489796)
+texture = ExtResource("3_d4l7m")
+
+[node name="start" type="Button" parent="."]
+offset_left = 423.0
+offset_top = 300.0
+offset_right = 669.0
+offset_bottom = 401.0
+icon = ExtResource("4_pvirk")
+expand_icon = true
+
+[node name="iniciar" type="Sprite2D" parent="."]
+position = Vector2(547, 350)
+scale = Vector2(0.27931, 0.287463)
+texture = ExtResource("4_dnkw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.219, 291)
+scale = Vector2(2.00423, 2.21296)
+texture = ExtResource("6_frg7k")
+
+[connection signal="mouse_entered" from="start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
